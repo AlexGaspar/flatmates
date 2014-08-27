@@ -22,7 +22,9 @@
     "grunt-contrib-cssmin": "~0.9.0",
     "grunt-contrib-less": "0.11.1",
     "grunt-contrib-coffee": "~0.10.1",
-    "elasticsearch": "~2.4.0"
+    "elasticsearch": "~2.4.0",
+    "skipper": "~0.5.3",
+    "bluebird": "~2.2.2"
   },
   "scripts": {
     "start": "node app.js",

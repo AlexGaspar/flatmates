@@ -1,0 +1,85 @@
+<section class="wrapper-md bg-highlight">
+  <div class="container">
+    <div class="row">
+      <!-- Main -->
+      <div class="col-sm-12 col-md-12">
+        <div class="panel panel-secondary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Add your own announce</h3>
+          </div>
+          <div class="panel-body padding-md">
+            <div class="row">
+              <div class="col-sm-12 col-md-12">
+                <h3>So, you already have your amazin' flat but now you're searching for amazing flatmates ?!</h3>
+              </div><!-- /.col -->
+              <div class="col-sm-12 col-md-4">
+                <form action="add" method="post" role="form">
+                  <div class="form-group">
+                    <label for="type">Type</label>
+                    <select class="form-control" name="type">
+                      <option value="flat">Flat</option>
+                      <option value="house">House</option>
+                      <option value="manor">Manor</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" class="form-control" rows="15"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="text" class="form-control" name="price" placeholder="Your price">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Create my announce</button>
+                </form>
+              </div><!-- /.col -->
+              <div class="col-sm12 col-md-8">
+                <label for="pictures">Pictures</label>
+                <!-- Carousel -->
+                <div id="my-carousel" class="carousel slide" style="margin-bottom: 15px">
+                  <!-- indicators -->
+                  <ol class="carousel-indicators">
+                    <li data-target="#my-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#my-carousel" data-slide-to="1"></li>
+                  </ol>
+                  <!-- carousel -->
+                  <div class="carousel-inner" style="height: 480px">
+                    <div class="item active">
+                      <img class="img-responsive" src="images/brussels.jpg" alt="1200x500" >
+                    </div><!-- /.item -->
+                    <div class="item">
+                      <img class="img-responsive" src="images/brussels.jpg" alt="1200x500" >
+                    </div><!-- /.item -->
+                  </div><!-- /.carousel-inner -->
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#my-carousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                  </a>
+                  <a class="right carousel-control" href="#my-carousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                  </a>
+                </div><!-- /.carousel -->
+                <button class="btn btn-primary">Add a picture</button>  
+              </div><!-- /.col -->  
+              </div><!-- /.col -->
+            </div><!-- /.row -->
+          </div><!-- /.panel-body -->
+        </div><!-- /.panel -->
+      </div><!-- /.col -->
+      <!-- End of main -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</section>
+
+
+<!-- last but not least the javascript -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.8.3.min.js"><\/script>')</script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.selectpicker').selectpicker();
+  });
+</script>
+<script src="js/holder.js"></script>

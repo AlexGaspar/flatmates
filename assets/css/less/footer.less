@@ -1,0 +1,28 @@
+.footer-container {
+	color: @footer-text-color;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: @footer-heading-color;
+	}
+	a {
+		color: @footer-link-color;
+		&:hover, &:focus {
+			color: @footer-link-color-hover;
+			text-decoration: none;
+		}
+	}
+}
+
+.footer-primary {
+	.wrapper-sm();
+	background: @footer-primary-bg;
+}
+
+.footer-secondary {
+	.wrapper-sm();
+	background: @footer-secondary-bg;
+}
+

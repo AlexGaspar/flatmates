@@ -1,0 +1,47 @@
+  <section class="wrapper-sm bg-highlight">
+    <div class="container">
+      {{#items}}
+        {{#newRow}}<div class="row">{{/newRow}}
+        <div class="col-sm-6 col-md-3">
+          <div class="thumbnail text-default">
+          {{#images}}
+            <div class="overlay-container">
+              <div class="imageContainer">
+                <img src="{{.}}" alt="" />
+              </div>
+            </div>
+          {{/images}}
+          {{^images}}
+            <div class="placeholder">
+              <img src="/images/house-placeholder.png" alt ="" />
+            </div>
+          {{/images}}
+            <div class="thumbnail-meta description">
+              <p>{{shortMessage}}</p>
+            </div>
+            <div class="thumbnail-meta">
+            <span class="h3 heading-default">{{price}}{{^price}}?{{/price}}</span><i class="fa fa-fw fa-euro"></i>  <a href="/detail/{{id}}" class="btn btn-link pull-right">View <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        {{#endRow}}</div>{{/endRow}}
+      {{/items}}
+      <!--
+        <div class="row">
+          <div class="col-sm-12 col-sm-offset-4">
+            <ul class="pagination pagination-lg">
+              <li><a href="#">«</a></li>
+              <li class="active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">6</a></li>
+              <li><a href="#">»</a></li>
+            </ul>
+          </div>
+        </div>
+        -->
+    </div>
+  </section>
+

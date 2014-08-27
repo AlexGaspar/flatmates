@@ -35,7 +35,7 @@ module.exports.routes = {
   '/': {
       controller: 'ads'
     , action: 'index'
-  },
+  }
 
   /***************************************************************************
   *                                                                          *
@@ -46,5 +46,10 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
+
+  , '/detail/:id' : {
+      controller: 'ads'
+    , action: 'detail'
+  }
 
 };

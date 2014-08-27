@@ -6,6 +6,7 @@
 var es = require('elasticsearch');
 
 var ElasticSearch = function() {
+    var self = this;
     this.connection = null;
 };
 
@@ -58,21 +59,33 @@ ElasticSearch.prototype.createQuery = function(params) {
 };
 
 ElasticSearch.prototype.run = function (params, callback) {
+    var self = this;
     var request = {
         index: "roommate"
       , type: "ads"
       , size: 50
     }
 
-    if(params) request.body = { query : createQuery(params)}
+    if(params) request.body = { query : this.createQuery(params)}
 
     this.getConnection().search(request)
       .then(function (resp) {
-          var data = addIdToItem(resp.hits.hits);
+          var data = self.addIdToResponse(resp.hits.hits);
           callback(null, data);
       }, function (err) {
           callback(err);
     });
+};
+
+ElasticSearch.prototype.addIdToResponse = function (items) {
+    items.forEach(function(item) {
+      var tmp = item._source;
+      tmp.id = item._id;
+
+      item = tmp;
+    });
+
+    return items;
 };
 
 /*
