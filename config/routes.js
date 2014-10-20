@@ -21,22 +21,10 @@
  */
 
 module.exports.routes = {
-
-  /***************************************************************************
-  *                                                                          *
-  * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
-  * etc. depending on your default view engine) your home page.              *
-  *                                                                          *
-  * (Alternatively, remove this and add an `index.html` file in your         *
-  * `assets` directory)                                                      *
-  *                                                                          *
-  ***************************************************************************/
-
-  '/': {
-      controller: 'ads'
-    , action: 'index'
+  '/healthcheck': {
+      controller: 'check'
+    , action: 'health'
   }
-
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
@@ -46,10 +34,12 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-
+  , '/': {
+      controller: 'ads'
+    , action: 'index'
+  }
   , '/detail/:id' : {
       controller: 'ads'
     , action: 'detail'
   }
-
 };
