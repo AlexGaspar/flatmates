@@ -26,17 +26,19 @@ function generateMap(address) {
 };
 
 function initializeMap(coo) {
+  var zoom = coo ? 14 : 12;
   var coordinates = coo || {
     lat: 50.8503396,
     lng: 4.3517103
   };
+
 
   var center = new google.maps.LatLng(coordinates.lat, coordinates.lng);
 
   // create map
   var mapOptions = {
     center: center,
-    zoom: 14,
+    zoom: zoom,
     scrollwheel: false,
     zoomControl: true,
     disableDefaultUI: true
