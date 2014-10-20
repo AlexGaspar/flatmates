@@ -3700,6 +3700,7 @@ body {
 }
 .fixed-bar {
   position: fixed;
+  z-index: 100;
   width: 100%;
 }
 .fixed-bar #search-bar a {
