@@ -55,65 +55,63 @@ var _searchForTerm = function (params) {
  */
 
 var indexAction = function(req, res, next) {
-    var params = {};
+  var params = {};
 
-    if(req.param("location") && req.param("location") !== '') {
-      params.match = { message : req.param("location") };
-    }
+  if(req.param("location") && req.param("location") !== '') {
+    params.match = { message : req.param("location") };
+  }
 
-    if(req.param("from") || req.param("to")) {
-      var from = Math.abs(parseInt( req.param("from")) ) || 0;
-      var to   = Math.abs(parseInt( req.param("to")) )   || 999999;
+  if(req.param("from") || req.param("to")) {
+    var from = Math.abs(parseInt( req.param("from")) ) || 0;
+    var to   = Math.abs(parseInt( req.param("to")) )   || 999999;
 
-      params.range = {
-          field: "price"
-        , min: from
-        , max: to
-      };
-    }
-
-    if(_.isEmpty(params)) params = null;
-
-    console.log(LastSearch.get(req));
-
-    // Template value
-    var templateValue = {
-        titles: 'Searching'
-      , searchTerms: LastSearch.get(req)
-      , partials : {}
+    params.range = {
+        field: "price"
+      , min: from
+      , max: to
     };
+  }
 
-    _searchForTerm(params).then(function(data) {
-      templateValue.items = data;
-      templateValue.partials.content = './partials/search';
-    })
-    .catch(function(e) {
-      templateValue.message = e;
-      templateValue.partials.content = './partials/error';
-    })
-    .finally(function() {
-      return res.render('layout', templateValue);
-    });
+  if(_.isEmpty(params)) params = null;
+
+  // Template value
+  var templateValue = {
+      titles: 'Searching'
+    , searchTerms: LastSearch(req)
+    , partials : {}
+  };
+
+  _searchForTerm(params).then(function(data) {
+    templateValue.items = data;
+    templateValue.partials.content = './partials/search';
+  })
+  .catch(function(e) {
+    templateValue.message = e;
+    templateValue.partials.content = './partials/error';
+  })
+  .finally(function() {
+    return res.render('layout', templateValue);
+  });
 }
 
 var detailAction = function(req, res, next) {
-    ElasticSearch.findById(req.params.id, function(err, result) {
-      var data = result[0]._source;
+  ElasticSearch.findById(req.params.id, function(err, result) {
+    var data = result[0]._source;
 
-      res.render('layout', {
-          titles: 'Small loft'
-        , searchTerms: LastSearch.get(req)
-        , item: data
-        , partials: {
-          content: './partials/detail'
-        }
-      });
+    res.render('layout', {
+        titles: 'Small loft'
+      , searchTerms: LastSearch(req)
+      , item: data
+      , partials: {
+        content: './partials/detail'
+      }
     });
+  });
 }
 
 
 module.exports = {
-	'index'  : indexAction
+	  'index'  : indexAction
   , 'detail' : detailAction
 };
 

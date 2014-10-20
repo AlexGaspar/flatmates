@@ -13,30 +13,9 @@
   <link rel="stylesheet" href="/css/theme.css">
   <link rel="shortcut icon" href="/favicon.ico">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-  <style type="text/css"></style><style id="holderjs-style" type="text/css"></style>
-
-  <style type="text/css">
-      html { height: 100% }
-      body { height: 100%; margin: 0; padding: 0 }
-      #map-canvas { height: 318px }
-    </style>
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9c9CBCi4QZUuFsgnOaAbPBcWz6AXZn6A&sensor=false">
-    </script>
-    <script type="text/javascript">
-      function initialize() {
-        var mapOptions = {
-          center: new google.maps.LatLng(-34.397, 150.644),
-          zoom: 8,
-          scrollwheel: false,
-          zoomControl: false,
-          disableDefaultUI: true
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9c9CBCi4QZUuFsgnOaAbPBcWz6AXZn6A&sensor=false">
+  </script>
 </head>
 <body>
   <div id="main-wrapper">
@@ -46,7 +25,7 @@
           <div class="col-sm-12">
             <form class="form-inline" role="form" action="/" method="post">
                 <div class="form-group">
-                  <input type="text" class="form-control" name="location" placeholder="Where do you want to live ? (Ixelles, Central Station, ...)" value="{{searchTerms.location}}"><input name="from" class="form-control price-range" value="{{searchTerms.from}}" placeholder="0 €" /><input name="to" value="{{searchTerms.to}}" placeholder="2000 €" class="form-control price-range"/><button type="submit" class="btn btn-red">Search</button>
+                  <input type="text" class="form-control" name="location" placeholder="Where do you want to live ? (Ixelles, Central Station, ...)" value="{{searchTerms.location}}"><input name="from" class="form-control price-range" value="{{searchTerms.from}}" placeholder="0 €" /><input name="to" value="{{searchTerms.to}}" placeholder="2000 €" class="form-control price-range"/><button type="submit" class="btn btn-red">Find your new home</button>
                 </div>
             </form>
           </div>

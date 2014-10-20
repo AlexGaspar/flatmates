@@ -2,6 +2,7 @@
     <div class="container">
       {{#items}}
         {{#newRow}}<div class="row">{{/newRow}}
+        <a href="/detail/{{id}}">
         <div class="col-sm-6 col-md-3">
           <div class="thumbnail text-default">
           {{#images}}
@@ -12,8 +13,8 @@
             </div>
           {{/images}}
           {{^images}}
-            <div class="placeholder">
-              <img src="/images/house-placeholder.png" alt ="" />
+            <div class="placeholder-wrapper">
+              <div class="placeholder"><i class="fa fa-home"></i></div>
             </div>
           {{/images}}
             <div class="thumbnail-meta description">
@@ -24,6 +25,7 @@
             </div>
           </div>
         </div>
+        </a>
         {{#endRow}}</div>{{/endRow}}
       {{/items}}
       <!--
