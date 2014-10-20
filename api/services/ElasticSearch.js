@@ -63,7 +63,8 @@ ElasticSearch.prototype.run = function (params, callback) {
     var request = {
         index: "roommate"
       , type: "ads"
-      , size: 50
+      , size: 100
+      , sort: 'images'
     }
 
     if(params) request.body = { query : this.createQuery(params)}
