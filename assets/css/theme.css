@@ -3688,30 +3688,38 @@ fieldset[disabled] .form-control {
 .remove-padding {
   padding: 0;
 }
+html,
+body {
+  height: 100% !important;
+}
 .right-align {
   text-align: right;
 }
 .left-align {
   text-align: left;
 }
-#search-bar a {
-  color: #fff;
-}
-#search-bar .row .form-group {
+.fixed-bar {
+  position: fixed;
   width: 100%;
 }
-#search-bar .row input {
+.fixed-bar #search-bar a {
+  color: #fff;
+}
+.fixed-bar #search-bar .row .form-group {
+  width: 100%;
+}
+.fixed-bar #search-bar .row input {
   width: 65%;
   border-color: #c93a55;
   border-radius: 3px 0 0 3px;
   margin: 0;
 }
-#search-bar .row .btn-red {
+.fixed-bar #search-bar .row .btn-red {
   background-color: #c93a55;
   border: 0;
   height: 34px;
 }
-#search-bar .row .price-range {
+.fixed-bar #search-bar .row .price-range {
   width: 90px;
   height: 34px;
   color: #6E2F41;
@@ -3722,6 +3730,16 @@ fieldset[disabled] .form-control {
   border-color: #c93a55;
   border-radius: 0px;
 }
-#search-bar .row .right-align {
+.fixed-bar #search-bar .row .right-align {
   margin-right: 40px;
+}
+#main-content {
+  padding-top: 70px;
+}
+.error {
+  margin-top: 40px;
+  text-align: center;
+}
+.error .message {
+  font-size: 22px;
 }

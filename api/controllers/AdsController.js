@@ -17,7 +17,6 @@ var Promise = require("bluebird");
 var _searchForTerm = function (params) {
     var deferred = Promise.pending();
 
-
     ElasticSearch.find(params, function(err, data) {
       if(data && data.length >= 1) {
         var i = 0;
@@ -97,6 +96,8 @@ var indexAction = function(req, res, next) {
 var detailAction = function(req, res, next) {
   ElasticSearch.findById(req.params.id, function(err, result) {
     var data = result[0]._source;
+
+    data.gAddress = data.address[0];
 
     res.render('layout', {
         titles: 'Small loft'
