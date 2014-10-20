@@ -61,7 +61,7 @@ ElasticSearch.prototype.createQuery = function(params) {
 ElasticSearch.prototype.run = function (params, callback) {
     var self = this;
     var request = {
-        index: "roommate"
+        index: sails.config.elasticSearch.index
       , type: "ads"
       , size: 100
       , sort: 'images'
