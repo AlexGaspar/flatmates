@@ -97,8 +97,6 @@ var detailAction = function(req, res, next) {
   ElasticSearch.findById(req.params.id, function(err, result) {
     var data = result[0]._source;
 
-    data.gAddress = data.address[0];
-
     res.render('layout', {
         titles: 'Small loft'
       , searchTerms: LastSearch(req)
