@@ -95,16 +95,20 @@ var indexAction = function(req, res, next) {
 
 var detailAction = function(req, res, next) {
   ElasticSearch.findById(req.params.id, function(err, result) {
-    var data = result[0]._source;
+    if(result && result.length > 0) {
+      var data = result[0]._source;
 
-    res.render('layout', {
-        titles: 'Small loft'
-      , searchTerms: LastSearch(req)
-      , item: data
-      , partials: {
-        content: './partials/detail'
-      }
-    });
+      res.render('layout', {
+          titles: 'Small loft'
+        , searchTerms: LastSearch(req)
+        , item: data
+        , partials: {
+          content: './partials/detail'
+        }
+      });
+    } else {
+      res.notFound();
+    }
   });
 }
 
