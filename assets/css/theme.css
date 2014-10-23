@@ -3633,11 +3633,6 @@ fieldset[disabled] .form-control {
     height: 140px;
   }
 }
-@media screen and (max-width: 767px) {
-  .row .description {
-    height: 75px;
-  }
-}
 .embed-wrapper {
   height: 300px;
   padding: 0px;
